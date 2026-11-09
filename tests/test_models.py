@@ -5007,6 +5007,31 @@ class TestModels(unittest.TestCase):
                     "full_attention",
                 ],
             },
+            {
+                "model_type": "ricursive",
+                "vocab_size": 1000,
+                "hidden_size": 128,
+                "intermediate_size": 256,
+                "num_hidden_layers": 4,
+                "num_attention_heads": 8,
+                "num_key_value_heads": 2,
+                "head_dim": 16,
+                "rms_norm_eps": 1e-6,
+                "rope_theta": 10000.0,
+                "sliding_window": 8,
+                "layer_types": [
+                    "sliding_attention",
+                    "sliding_attention",
+                    "sliding_attention",
+                    "full_attention",
+                ],
+                "use_gated_attention": True,
+                "gate_full_precision": True,
+                "use_valres": True,
+                "ffn_clamp_threshold": 20.0,
+                "embed_scale": 11.3,
+                "tie_word_embeddings": False,
+            },
         ]
         for config in test_configs:
             model_type = config["model_type"]
